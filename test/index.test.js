@@ -10,7 +10,7 @@ test("creates checklist plan from local source files", async () => {
     generatedAt: "2026-06-08T00:00:00.000Z"
   });
 
-  assert.equal(plan.sources.length, 2);
+  assert.equal(plan.sources.length, 3);
   assert.equal(plan.checks.find((check) => check.key === "auth").status, "covered");
   assert.equal(plan.checks.find((check) => check.key === "webhooks").status, "covered");
   assert.ok(plan.missing.includes("environments") === false);
