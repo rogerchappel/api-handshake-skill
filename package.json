@@ -1,0 +1,33 @@
+{
+  "name": "api-handshake-skill",
+  "version": "0.1.0",
+  "description": "Plan API integration handshakes with local checklists, fixtures, and acceptance tests.",
+  "type": "module",
+  "bin": {
+    "api-handshake-skill": "./bin/api-handshake-skill.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "SKILL.md",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check bin/api-handshake-skill.js",
+    "smoke": "rm -rf tmp && node bin/api-handshake-skill.js plan test/fixtures/specs --out tmp/integration-plan.md && node bin/api-handshake-skill.js fixtures tmp/integration-plan.md --out tmp/fixtures && test -s tmp/fixtures/request.json && test -s tmp/fixtures/response.json",
+    "build": "npm run check"
+  },
+  "keywords": [
+    "agents",
+    "api",
+    "integration",
+    "webhooks",
+    "fixtures"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
