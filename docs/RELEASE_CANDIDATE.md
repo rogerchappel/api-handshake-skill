@@ -20,6 +20,8 @@ npm run smoke
 bash scripts/validate.sh
 ```
 
+All commands passed locally on 2026-06-08.
+
 ## Known Limits
 
 - V1 uses text-signal extraction instead of full OpenAPI validation.
