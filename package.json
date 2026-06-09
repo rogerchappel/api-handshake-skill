@@ -42,5 +42,6 @@
   "homepage": "https://github.com/rogerchappel/api-handshake-skill#readme",
   "engines": {
     "node": ">=20"
-  }
+  },
+  "author": "Roger Chappel"
 }
