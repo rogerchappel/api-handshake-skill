@@ -11,13 +11,18 @@
     "src",
     "docs",
     "SKILL.md",
-    "README.md"
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
   ],
   "scripts": {
     "test": "node --test",
     "check": "node --check src/index.js && node --check bin/api-handshake-skill.js",
     "smoke": "rm -rf tmp && node bin/api-handshake-skill.js plan test/fixtures/specs --out tmp/integration-plan.md && node bin/api-handshake-skill.js fixtures tmp/integration-plan.md --out tmp/fixtures && test -s tmp/fixtures/request.json && test -s tmp/fixtures/response.json",
-    "build": "npm run check"
+    "build": "npm run check",
+    "package:smoke": "npm pack --dry-run",
+    "release:check": "npm run check && npm test && npm run smoke && npm run package:smoke"
   },
   "keywords": [
     "agents",
@@ -27,6 +32,14 @@
     "fixtures"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerchappel/api-handshake-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerchappel/api-handshake-skill/issues"
+  },
+  "homepage": "https://github.com/rogerchappel/api-handshake-skill#readme",
   "engines": {
     "node": ">=20"
   }
