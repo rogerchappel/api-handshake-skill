@@ -63,3 +63,12 @@ bash scripts/validate.sh
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).
+
+## Release Verification
+
+Before publishing or tagging a release, run the same verification path used by CI:
+
+- `npm run release:check`
+- `npm run package:smoke`
+
+See `docs/release-readiness.md` for the package surface, CLI bins, and reviewer checklist.
