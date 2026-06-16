@@ -7,7 +7,7 @@ Plan API integration handshakes before writing connector code. The CLI reads loc
 ```bash
 npm install
 npm run smoke
-node bin/api-handshake-skill.js plan test/fixtures/specs --out tmp/integration-plan.md
+node bin/api-handshake-skill.js plan examples/specs --out tmp/integration-plan.md
 node bin/api-handshake-skill.js fixtures tmp/integration-plan.md --out tmp/fixtures
 ```
 
@@ -55,5 +55,20 @@ This project is offline by default. It does not call APIs, validate credentials,
 npm test
 npm run check
 npm run smoke
+npm run package:smoke
+npm run release:check
 bash scripts/validate.sh
 ```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Release Verification
+
+Before publishing or tagging a release, run the same verification path used by CI:
+
+- `npm run release:check`
+- `npm run package:smoke`
+
+See `docs/release-readiness.md` for the package surface, CLI bins, and reviewer checklist.
