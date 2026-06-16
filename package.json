@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "Plan API integration handshakes with local checklists, fixtures, and acceptance tests.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerchappel/api-handshake-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rogerchappel/api-handshake-skill/issues"
+  },
+  "homepage": "https://github.com/rogerchappel/api-handshake-skill#readme",
   "bin": {
     "api-handshake-skill": "./bin/api-handshake-skill.js"
   },
