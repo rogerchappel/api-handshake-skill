@@ -1,9 +1,15 @@
 #!/usr/bin/env node
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import pkg from "../package.json" with { type: "json" };
 import { createPlan, renderPlan, writeFixtures } from "../src/index.js";
 
 async function main(argv) {
+  if (argv.includes("--version") || argv.includes("-v")) {
+    console.log(pkg.version);
+    return;
+  }
+
   const { command, positionals, flags } = parseArgs(argv);
   if (!command || flags.help) return printHelp();
 
@@ -62,6 +68,9 @@ Usage:
 Commands:
   plan       Generate a local API integration handshake plan.
   fixtures   Generate mock request, response, webhook, and acceptance fixtures.
+
+Options:
+  --version  Show the package version.
 `);
 }
 

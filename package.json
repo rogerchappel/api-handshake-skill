@@ -34,6 +34,7 @@
     "fixtures"
   ],
   "license": "MIT",
+  "author": "Roger Chappel",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rogerchappel/api-handshake-skill.git"
@@ -44,6 +45,5 @@
   "homepage": "https://github.com/rogerchappel/api-handshake-skill#readme",
   "engines": {
     "node": ">=20"
-  },
-  "author": "Roger Chappel"
+  }
 }
