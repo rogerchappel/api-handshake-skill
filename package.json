@@ -23,7 +23,7 @@
     "check": "node --check src/index.js && node --check bin/api-handshake-skill.js",
     "smoke": "rm -rf tmp && node bin/api-handshake-skill.js plan test/fixtures/specs --out tmp/integration-plan.md && node bin/api-handshake-skill.js fixtures tmp/integration-plan.md --out tmp/fixtures && test -s tmp/fixtures/request.json && test -s tmp/fixtures/response.json",
     "build": "npm run check",
-    "package:smoke": "npm pack --dry-run",
+    "package:smoke": "node scripts/package-smoke.mjs",
     "release:check": "npm run check && npm test && npm run smoke && npm run package:smoke"
   },
   "keywords": [
