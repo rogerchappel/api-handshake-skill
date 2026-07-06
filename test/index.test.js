@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -25,6 +26,13 @@ test("renders plan with checklist and safety notes", async () => {
   assert.match(markdown, /# API Integration Handshake Plan/);
   assert.match(markdown, /Authentication model/);
   assert.match(markdown, /Do not use production credentials/);
+});
+
+test("cli help documents plan and fixture generation commands", () => {
+  const output = execFileSync("node", ["bin/api-handshake-skill.js", "--help"], { encoding: "utf8" });
+  assert.match(output, /Usage:/);
+  assert.match(output, /api-handshake-skill plan/);
+  assert.match(output, /api-handshake-skill fixtures/);
 });
 
 test("writes mock fixtures from a plan", async () => {

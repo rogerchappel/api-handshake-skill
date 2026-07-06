@@ -5,6 +5,11 @@ import pkg from "../package.json" with { type: "json" };
 import { createPlan, renderPlan, writeFixtures } from "../src/index.js";
 
 async function main(argv) {
+  if (argv.length === 0 || argv.includes("--help") || argv.includes("-h")) {
+    printHelp();
+    return;
+  }
+
   if (argv.includes("--version") || argv.includes("-v")) {
     console.log(pkg.version);
     return;
