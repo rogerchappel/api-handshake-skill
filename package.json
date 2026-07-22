@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Plan API integration handshakes with local checklists, fixtures, and acceptance tests.",
   "type": "module",
+  "exports": "./src/index.js",
   "bin": {
     "api-handshake-skill": "./bin/api-handshake-skill.js"
   },
